@@ -2,8 +2,9 @@
 //*Importing the data model for the User.
 const User = require('../models/User.models');
 
-const generateJWT = require('../helpers/generate-jwt.helpers');
+//*#############################- importing libraries -#########################################
 
+const generateJWT = require('../helpers/generate-jwt.helpers');
 const bcrypt = require('bcrypt');
 
 
