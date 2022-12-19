@@ -1,7 +1,6 @@
 
 //*#############################- IMPORTING: -#########################################
 //*Importing the data models-------------------------------------------------
-
 const User = require('../models/User.models');
 const Task = require('../models/Task.models');
 
@@ -27,13 +26,13 @@ ctrlUser.getActiveUsers = async (req, res, next) => {
         return res.status(404).json({
             message: 'Users not found',
             error:error.message
-        }) 
+        }).end()
     }
 };
 
 
 //------------------------------------------------------------------------------------------------------
-//! Controlador para OBTENER UN USUARIO ESPECÍFICO (Activo o inactivo). Requiere que se envíe en la url el id del usuario por el ue se consulta la información.
+//! Controlador para OBTENER UN USUARIO ESPECÍFICO (Activo o inactivo). Requiere que se envíe en la url el id del usuario por el que se consulta la información.
 //! Este método sólo puede ser ejecutado por usuarios con PERMISOS DE ADMINISTRADOR.
 
 ctrlUser.getSpecificUser = async (req, res) => {
@@ -41,7 +40,7 @@ ctrlUser.getSpecificUser = async (req, res) => {
     const id_user = req.params.id_user;//!Este id_user (despues del params) debe estar igual, tanto en la ruta o endpoint como aquí!
     try {
         /*
-        TODO fijarme bien el método findById(). Ver también el tema del $and... En los controladores de tareras la búsqueda con filtros la hice de otra forma.
+        TODO fijarme bien el método findById(). Ver también el tema del $and... En los controladores de tareas la búsqueda con filtros la hice de otra forma.
         TODO await Task.find({isActive : true, user_id: req.user._id.toString()})
         TODO Funcionaría de igual forma el siguiente comando?:
         const user = await User.find({ 
@@ -81,11 +80,15 @@ ctrlUser.getSpecificUser = async (req, res) => {
         return res.status(200).json({
             message: 'User FOUND 🌟',
             user
-       });
+       }).end();
 
         
     } catch (err) {
         console.log('Error trying to GET specific user', err);
+        return res.status(404).json({
+            message: 'Users not found',
+            error:err.message
+        }).end()
     };
 };
 
@@ -96,7 +99,7 @@ ctrlUser.addUser = async (req, res) => {
     const {
         user_name,
         user_email,
-        user_password: recibed_password,
+        user_password: recibed_password, //TODO check this
         user_role,
         is_admin,
         ... otherData
@@ -145,7 +148,7 @@ ctrlUser.addUser = async (req, res) => {
         console.log('Error trying to ADD user', err);
         return res.status(500).json({
             msg: 'There was an error in the ADDITION of the new user.'
-        });
+        }).end();
     }
 }
 
@@ -169,7 +172,7 @@ ctrlUser.updateUser = async (req, res) => {
     } = req.body;
 
     //!Se desestructura lo que viene en el body para tomar sólo lo que me interesa.
-    //El objeto data es para evitar tener que poner el los campos individualmente. Sólo se usaría si uso la función findByIdAndUpdate() del mongo, pero en mi caso estoy separando los pasos. Primero busco por id el usuario que quiero actualizar con findOne() y luego lo actualizo.
+    //El objeto data es para evitar tener que poner en los campos individualmente. Sólo se usaría si uso la función findByIdAndUpdate() del mongo, pero en mi caso estoy separando los pasos. Primero busco por id el usuario que quiero actualizar con findOne() y luego lo actualizo.
     const data = { user_name, user_email, user_password }
 
     if(!user_name || !user_email || !user_password) {
@@ -177,8 +180,8 @@ ctrlUser.updateUser = async (req, res) => {
         console.log('The user data is incomplete!');
         return res.status(400).json({
             msg : 'Please fill all the fields correctly.',
-            res: ["user_name", "user_email", "user_password"]
-        });
+            res: ["user_name", "user_email", "user_password"] //TODO check this!
+        }).end();
     };
 
     //*Verifico que el nombre de usurio o la contraseña no sean strings muy cortos
@@ -406,16 +409,12 @@ ctrlUser.fullSoftDeleteUser = async function (req, res) {
     })
     
     await deleteAllTasks( req, res )
-    
 
     this.ctrlUser.softDeleteUser()
 
     const {
     } = req.body 
     */
-
-
-
 
 }
 
