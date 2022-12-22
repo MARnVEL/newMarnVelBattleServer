@@ -4,7 +4,7 @@
 ### Desarrollo back-end con __Node.js__ y **Express**.
 
 ## Descripción:
-> Este proyecto es una implementación de lo dado en la cátedra "Taller de lenguajes de programación".
+> Este proyecto es una implementación de lo dado en la cátedra "Taller de lenguajes de programación II".
 > Es la parte del back-end de una sencilla aplicación que permite el manejo de tareas (crear nuevas tareas,  obtener  el  listado  de  tareas  ya  creadas,  editarlas  y  eliminarlas ).
 > A su vez admite multiusuarios con autenticación y autorización a través de JSON WEB TOKEN.
 
@@ -12,7 +12,6 @@
 
 ### Para ejecutar el proyecto, se debe tener instalado __Node.js__ y __npm__.
 
->>> Utilizar versión LTS (Recomendado)
 
 ### Verificar versión de Node con:
 ```bash

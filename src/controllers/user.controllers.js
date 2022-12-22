@@ -242,8 +242,8 @@ ctrlUser.softDeleteUser = async (req, res) => {
         //*Verifico que el usuario que se intenta eliminar, efectivamente esté en la BD
         if (!theUser){
             return res.status(404).json({
-                message: 'This user does not exist'
-            });
+                message: 'This user does not exist',
+            }).end();
         };
 
         const theDeletedUser = await theUser.updateOne({
@@ -262,7 +262,7 @@ ctrlUser.softDeleteUser = async (req, res) => {
         return res.status(500).json({
             msg : 'Internal Server Error',
             msg2: 'There was an error trying to delete the user'
-        });
+        }).end();
     }
 }
 
@@ -280,7 +280,7 @@ ctrlUser.hardDeleteUser = async (req, res) => {
         if (!theUser){
             return res.status(404).json({
                 message: 'This user does not exist'
-            });
+            }).end();
         };
 
         const theDeletedUser = await theUser.deleteOne();
@@ -296,7 +296,7 @@ ctrlUser.hardDeleteUser = async (req, res) => {
         console.log(error.message);
         return res.status(500).json({
             msg: 'There was an error trying to DELETE and REMOVE FROM THE DATABASE the user'
-        });
+        }).end();
     }
 }
 
@@ -314,7 +314,7 @@ ctrlUser.fullSoftDeleteUser = async function (req, res) {
      if(!user_id) {
         return res.status(400).json({
             message : 'No user id in the request'
-        });
+        }).end();
     }
 
     try {
@@ -350,7 +350,7 @@ ctrlUser.fullSoftDeleteUser = async function (req, res) {
         console.log("Las tareas borradas son: ", theDeletedTask);
         */
 
-        //Esta es la parte en que elimino el usuario, luego de haber eliminado sus tareas
+        //!Esta es la parte en que elimino el usuario, luego de haber eliminado sus tareas
         try {
             const theUser = await User.findOne({$and:[{_id: id_user},{isActive: true}]});
             
@@ -367,7 +367,7 @@ ctrlUser.fullSoftDeleteUser = async function (req, res) {
             return res.status(500).json({
                 msg : 'Internal Server Error',
                 msg2: 'There was an error trying to delete the user'
-            });
+            }).end();
         }
 
         //Una vez eliminada la info, retorno como resultado los documentos eliminados.
