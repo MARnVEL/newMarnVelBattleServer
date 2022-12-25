@@ -17,17 +17,17 @@
     <br/>
     <span>
         <a href="https://www.mongodb.com/docs/" title='MongoDB' target="_blank">
-            <img width="200" src='https://storage-us-gcs.bfldr.com/vmgsv9w85q3q25q9qjnvqj4/v/1069931058/original/MongoDB_SlateBlue.png?Expires=1670941326&KeyName=gcs-bfldr-prod&Signature=TcoGeh2v5OcERV0hEG0TQt4LuSU='>
+            <img width="200" src='https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg'>
         </a>
     </span>
     <span>
         <a href="https://mongoosejs.com/" title='Mongoose' target="_blank">
-            <img width="200" src='https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcSEnR4ial3ECp-aF410k2lmg1f2cC3ZNqc5vnltRtFHsMZyvIU%26s&sp=1670855355T885c4cc3b11eb121dc111bd8e28c39a8bae40cdaf4145e8133b51e91cd0db7ee'>
+            <img width="200" src='https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png'>
         </a>
     </span>
     <span>
         <a href="https://expressjs.com/es/" title='ExpressJS' target="_blank">
-            <img width="200" src='https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fexpressjs.com%2Fimages%2Fexpress-facebook-share.png&sp=1670856340T20c2f406067d00ba3015185d6098052d8c824e2d402ca0b6fa4f8761e20e49b2'>
+            <img width="200" src='https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcSC4WjLqLiSWSoyOh4btp1SVmDhVofo3_z6ybRXJeJBfIBKB_vN%26s&sp=1672001567T918dfef3486086252c62d32fa5d2253a7e9ea58227093d9c6703be2bf1f66ea8'>
         </a>
     </span>
 
