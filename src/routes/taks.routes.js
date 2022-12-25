@@ -24,7 +24,7 @@ const {
 //*#############################- importing middlewares -#########################################
 const validateJWT = require('../middlewares/validate-jwt.middlewares');
 const isAdminUser = require('../middlewares/isAdminUser.middlewares');
-const validarCampos = require('../middlewares/validate-fields.middlewares.js');
+const validateFields = require('../middlewares/validate-fields.middlewares');
 
 
 //*#############################- defining routes -#########################################
@@ -66,7 +66,7 @@ router.post('/task', [
     .isEmpty().withMessage('La descripción es obligatoria')
     .isString().withMessage('La descripción no es un string'),
 
-    validarCampos
+    validateFields
 
     ],  createTask);
 

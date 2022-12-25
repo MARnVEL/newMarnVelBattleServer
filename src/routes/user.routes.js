@@ -24,7 +24,7 @@ const {
 //*#############################- importing middlewares -#########################################
 const validateJWT = require('../middlewares/validate-jwt.middlewares');
 const isAdminUser = require('../middlewares/isAdminUser.middlewares');
-const validarCampos = require('../middlewares/validate-fields.middlewares.js');
+const validateFields = require('../middlewares/validate-fields.middlewares.js');
 
 
 //*#############################- defining routes -#########################################

@@ -11,7 +11,7 @@ const validateEmail = async value => {
     const user = await User.findOne({ email: value });
     
     if(user){
-        throw new Error('The user already exist! 🚫');
+        throw new Error('The user already exists! 🚫');
     }
 
     return true;
