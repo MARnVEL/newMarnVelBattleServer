@@ -70,12 +70,17 @@ npm run dev
 ```bash
 git clone https://github.com/MARnVEL/newMarnVelBattleServer.git
 ```
-### Database Issues:
-Para trabajar correctamente con los datos de forma local necesitas tener instalado mongo compass
-Crear una conexión local
-y luego ejecutar el proyecto
+## Database Issues:
+### Locally:
+> In order to work correctly with data locally you need to have installed **Mongo Compass**:
+>> Create a local conection with the string "mongodb://localhost:27017"
+>> Then run the project!
+> A database will be created automatically. Finally you can start to make some requests to the server using either **Postman** or **ThunderClient** or any other request/response software.
 
-Para trabajar con una base de datos en forma remota o en la nube necesitas tener una cuenta en mongo Atlas y crear un cluster.
+
+### Remote:
+> In order to work correctly with data on the cloud you need to have a account in **Mongo Atlas DB**  and create a Cluster.
+>> 
 
 
 [1]: https://jwt.io/
