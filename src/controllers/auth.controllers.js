@@ -7,7 +7,6 @@ const User = require('../models/User.models');
 const generateJWT = require('../helpers/generate-jwt.helpers');
 const bcrypt = require('bcrypt');
 
-
 ctrlAuth = {};
 
 ctrlAuth.startSession = async (req, res) => {

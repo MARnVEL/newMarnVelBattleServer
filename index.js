@@ -29,7 +29,7 @@ const user = require('./src/routes/user.routes');
 const auth = require('./src/routes/auth.routes');
 
 //*Importo todos los endpoints correspondientes a las tareas
-const task = require('./src/routes/task.routes');
+const task = require('./src/routes/tasks.routes');
 
 
 

@@ -18,17 +18,17 @@ const connectDB = async () => {
 
     try {
         //*Conexión a Atlas
-        mongoose.connect(MONGO_ATLAS_URI, {
+        // mongoose.connect(MONGO_ATLAS_URI, {
+        //     useUnifiedTopology : true,
+        //     useNewUrlParser : true
+        // });
+
+        //*Conexión a Compass.
+        mongoose.connect(MONGO_COMPASS_URI, {
             useUnifiedTopology : true,
             useNewUrlParser : true
         });
-
-        //*Conexión a Compass.
-        /* mongoose.connect(MONGO_COMPASS_URI, {
-            useUnifiedTopology : true,
-            useNewUrlParser : true
-        }); */
-        console.log('Conected to the database');
+        console.log('Conected to the database in local mode');
         
     } catch (error) {
         console.log(error.message);

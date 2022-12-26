@@ -1,6 +1,6 @@
 
 //*#############################- importing libraries -#########################################
-const jwt = require('jsonwbtoken');
+const jwt = require('jsonwebtoken');
 
 /**
  * La función generateJWT recibe UN OBJETO y retorna una promesa para poder utilizar el await en el controlador.

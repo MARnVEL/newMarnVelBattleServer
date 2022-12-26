@@ -1,7 +1,7 @@
 # FORMOSA'S POLYTECHNIC INSTITUTE.
 ## HIGHER TECHNICIAN MULTIPLATAFORM SOFTWARE DEVELOPMENT.
 
-### Back-end development with __Node.js__ y **Express**.
+### Back-end development with __Node.js__ and **Express**.
 ## Tools:
 <div align="center" style="display: flex">
     <span>
@@ -27,7 +27,7 @@
     </span>
     <span>
         <a href="https://expressjs.com/es/" title='ExpressJS' target="_blank">
-            <img width="200" src='https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcSC4WjLqLiSWSoyOh4btp1SVmDhVofo3_z6ybRXJeJBfIBKB_vN%26s&sp=1672001567T918dfef3486086252c62d32fa5d2253a7e9ea58227093d9c6703be2bf1f66ea8'>
+            <img width="200" src='https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png'>
         </a>
     </span>
 
@@ -36,8 +36,8 @@
 
 ## Description:
 > This project is an implementation of the material studied on the subject in the institute in the subject "Programming Language Workshop II".
-> It is the back-end part of a simple application which allows you the handle of tasks (create new tasks, get a list of created tasks, it allows you to edit tasks and delete them too).
-> At the same time this app admit multi-users with authentication and authorization through **[JSONWEBTOKEN][1]**
+> It is the back-end part of a simple application which allows you to handle tasks (create new tasks, get a list of created tasks, it allows you to edit tasks and delete them too).
+> At the same time, this app admit multi-users with authentication and authorization through **[JSONWEBTOKEN][1]**
 
 
 ### In order to run this project, you need to have installed:  __Node.js__  and __npm__.
@@ -70,5 +70,14 @@ npm run dev
 ```bash
 git clone https://github.com/MARnVEL/newMarnVelBattleServer.git
 ```
+### Database Issues:
+Para trabajar correctamente con los datos de forma local necesitas tener instalado mongo compass
+Crear una conexión local
+y luego ejecutar el proyecto
+
+Para trabajar con una base de datos en forma remota o en la nube necesitas tener una cuenta en mongo Atlas y crear un cluster.
+
 
 [1]: https://jwt.io/
+
+
