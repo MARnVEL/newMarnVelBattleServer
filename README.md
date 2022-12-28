@@ -72,6 +72,7 @@ git clone https://github.com/MARnVEL/newMarnVelBattleServer.git
 ```
 ## Database Issues:
 ### Locally:
+> By default the project runs on a local mode.
 > In order to work correctly with data locally you need to have installed **Mongo Compass**:
 >> Create a local conection with the string "mongodb://localhost:27017"
 >> Then run the project!
@@ -79,6 +80,7 @@ git clone https://github.com/MARnVEL/newMarnVelBattleServer.git
 
 
 ### Remote:
+> Comment the lines from 27 to 31 in file "connection.database.js" and uncomment the lines corresponding to the remote connection from line 21 to 25 at the same file.
 > In order to work correctly with data on the cloud you need to have a account in **Mongo Atlas DB**  and create a Cluster.
 >> 
 
