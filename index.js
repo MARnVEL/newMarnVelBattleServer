@@ -7,6 +7,7 @@
 //*#############################- IMPORTACIÓN DE LIBRERÍAS -#########################################
 
 const express =  require('express');
+const { rateLimit } = require('express-rate-limit')
 const path = require('path');
 
 const cors = require('cors');
@@ -32,6 +33,13 @@ const auth = require('./src/routes/auth.routes');
 const task = require('./src/routes/tasks.routes');
 
 
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	limit: 5, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+	// store: ... , // Use an external store for more precise rate limiting
+})
 
 
 
@@ -49,6 +57,10 @@ expressApp.use(express.json());
 
 expressApp.use(cors());
 expressApp.use(morgan('dev'));
+
+
+// Apply the rate limiting middleware to all requests
+expressApp.use(limiter)
 expressApp.use(user);
 expressApp.use(task);
 expressApp.use(auth);
